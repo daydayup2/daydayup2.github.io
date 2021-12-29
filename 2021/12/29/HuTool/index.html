@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>Archives: 2021/12 |  博客</title>
+      <title>HuTool |  博客</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -64,131 +64,270 @@
       
     <main class="content on">
       <section class="outer">
+  <article
+  id="post-HuTool"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  HuTool
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2021/12/29/HuTool/" class="article-date">
+  <time datetime="2021-12-29T13:18:45.324Z" itemprop="datePublished">2021-12-29</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> Word count:</span>
+            <span class="post-count">518</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> Reading time≈</span>
+            <span class="post-count">2 min</span>
+        </span>
+    </span>
+</div>
+ 
+    </div>
+      
+    <div class="tocbot"></div>
+
+
+
+
   
-  <ul class="ads">
-    
-        <li>
-            <a href="">
-                <img src="" width="300" alt="">
-            </a>
-        </li>
-    
-        <li>
-            <a href="">
-                <img src="" width="300" alt="">
-            </a>
-        </li>
-    
+    <div class="article-entry" itemprop="articleBody">
+       
+  <p>HuTool</p>
+<p>官方文档：<a href="">https://www.hutool.cn/docs/index.html#/</a></p>
+<p>Hutool是一个Java基础工具类，对文件、流、加密解密、转码、正则、线程、XML等JDK方法进行封装，组成各种Util工具类，同时提供以下组件：</p>
+<ul>
+<li>布隆过滤</li>
+<li>缓存</li>
+<li>克隆接口</li>
+<li>类型转换</li>
+<li>日期处理</li>
+<li>数据库ORM（基于ActiveRecord思想）</li>
+<li>基于DFA优先自动机的多个关键字查找</li>
+<li>HTTP客户端</li>
+<li>IO和文件</li>
+<li>有用的一些数据结构</li>
+<li>日志</li>
+<li>反射代理类的简化（AOP切面实现）</li>
+<li>Setting（一种扩展Properties的配置文件）</li>
+<li>System（JVM和系统信息等）</li>
+<li>WatchService的封装（文件变动监控）</li>
+<li>XXXUtil各种游泳的工具类</li>
 </ul>
-  
-  
-  <article class="articles">
-    
-    
-    <h1 class="page-type-title">2021/12</h1>
-    
-    
-  
-  
-  
-  
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2021" class="archive-year">2021</a>
-    </div>
-    <div class="archives">
-      
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/12/29/Fangment/" class="archive-article-date">
-  <time datetime="2021-12-29T13:37:26.369Z" itemprop="datePublished">12/29</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/12/29/Fangment/"
-    >Fragment</a> 
-</h2>
- 
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>hutool-aop</td>
+<td>JDK动态代理封装，提供非IOC下的切面支持</td>
+</tr>
+<tr>
+<td>hutool-bloomFilter</td>
+<td>布隆过滤，提供一些Hash算法的布隆过滤</td>
+</tr>
+<tr>
+<td>hutool-cache</td>
+<td>简单缓存实现</td>
+</tr>
+<tr>
+<td>hutool-core</td>
+<td>核心，包括Bean操作、日期、各种Util等</td>
+</tr>
+<tr>
+<td>hutool-cron</td>
+<td>定时任务模块，提供类Crontab表达式的定时任务</td>
+</tr>
+<tr>
+<td>hutool-crypto</td>
+<td>加密解密模块，提供对称、非对称和摘要算法封装</td>
+</tr>
+<tr>
+<td>hutool-db</td>
+<td>JDBC封装后的数据操作，基于ActiveRecord思想</td>
+</tr>
+<tr>
+<td>hutool-dfa</td>
+<td>基于DFA模型的多关键字查找</td>
+</tr>
+<tr>
+<td>hutool-extra</td>
+<td>扩展模块，对第三方封装（模板引擎、邮件、Servlet、二维码、Emoji、FTP、分词等）</td>
+</tr>
+<tr>
+<td>hutool-http</td>
+<td>基于HttpUrlConnection的Http客户端封装</td>
+</tr>
+<tr>
+<td>hutool-log</td>
+<td>自动识别日志实现的日志门面</td>
+</tr>
+<tr>
+<td>hutool-script</td>
+<td>脚本执行封装，例如Javascript</td>
+</tr>
+<tr>
+<td>hutool-setting</td>
+<td>功能更强大的Setting配置文件和Properties封装</td>
+</tr>
+<tr>
+<td>hutool-system</td>
+<td>系统参数调用封装（JVM信息等）</td>
+</tr>
+<tr>
+<td>hutool-json</td>
+<td>JSON实现</td>
+</tr>
+<tr>
+<td>hutool-captcha</td>
+<td>图片验证码实现</td>
+</tr>
+<tr>
+<td>hutool-poi</td>
+<td>针对POI中Excel和Word的封装</td>
+</tr>
+<tr>
+<td>hutool-socket</td>
+<td>基于Java的NIO和AIO的Socket封装</td>
+</tr>
+<tr>
+<td>hutool-jwt</td>
+<td>JSON Web Token (JWT)封装实现</td>
+</tr>
+</tbody></table>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Maven</p>
+<p>在项目的pom.xml的dependencies中加入以下内容:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;   </span><br><span class="line">	&lt;groupId&gt;cn.hutool&lt;/groupId&gt;    </span><br><span class="line">	&lt;artifactId&gt;hutool-all&lt;/artifactId&gt;    </span><br><span class="line">	&lt;version&gt;<span class="number">5.7</span><span class="number">.14</span>&lt;/version&gt; </span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
 
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/12/29/HuTool/" class="archive-article-date">
-  <time datetime="2021-12-29T13:18:45.324Z" itemprop="datePublished">12/29</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/12/29/HuTool/"
-    >HuTool</a> 
-</h2>
- 
+<p>Gradle</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">implementation <span class="string">&#x27;cn.hutool:hutool-all:5.7.14&#x27;</span></span><br></pre></td></tr></table></figure>
 
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/12/27/Linux%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/" class="archive-article-date">
-  <time datetime="2021-12-27T06:19:42.224Z" itemprop="datePublished">12/27</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/12/27/Linux%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/"
-    >Linux命令手册</a> 
-</h2>
+<h2 id="HuTool文档地址"><a href="#HuTool文档地址" class="headerlink" title="HuTool文档地址"></a>HuTool文档地址</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.hutool.cn/docs/index.html#/">https://www.hutool.cn/docs/index.html#/</a></p>
+</blockquote>
  
-
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2021/12/24/hello-world/" class="archive-article-date">
-  <time datetime="2021-12-24T06:57:29.568Z" itemprop="datePublished">12/24</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2021/12/24/hello-world/"
-    >Hello World</a> 
-</h2>
- 
-
-    </header>
-    
-    
-  </div>
-</article>
-      
+      <!-- reward -->
       
     </div>
+    
+
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>Copyright： </strong>
+          
+          Copyright is owned by the author. For commercial reprints, please contact the author for authorization. For non-commercial reprints, please indicate the source.
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://example.com/2021/12/29/HuTool/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
   </div>
-  
-  
+
+   
+  <nav class="article-nav">
+    
+      <a href="/2021/12/29/Fangment/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            Fragment
+          
+        </div>
+      </a>
+    
+    
+      <a href="/2021/12/27/Linux%E5%91%BD%E4%BB%A4%E6%89%8B%E5%86%8C/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Linux命令手册</div>
+      </a>
+    
+  </nav>
 
   
+   
+     
+</article>
+
 </section>
       <footer class="footer">
   <div class="outer">
@@ -333,6 +472,22 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link
