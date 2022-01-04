@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Fragment</title>
-    <url>/2021/12/29/Fangment/</url>
-    <content><![CDATA[<h2 id="静态加载Fragment"><a href="#静态加载Fragment" class="headerlink" title="静态加载Fragment"></a>静态加载Fragment</h2><p><img src="C:\Users\Administrator\Desktop\Typora\图\静态加载Frament.jpg"></p>
+    <title>Fangment</title>
+    <url>/2021/12/30/Fangment/</url>
+    <content><![CDATA[<p>Fangment</p>
+<h1 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h1><h2 id="静态加载Fragment"><a href="#静态加载Fragment" class="headerlink" title="静态加载Fragment"></a>静态加载Fragment</h2><p><img src="/images/Fangment/Frament2.jpg" alt="静态加载Frament"></p>
 <ul>
 <li>LayoutInflater中的inflate方法是将我们传递的xml文件通过IO操作，转换成View，这样我们就能得到View对象了。</li>
 <li>关于inflate方法的入参，请看下面代码</li>
@@ -15,7 +16,7 @@
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LeftFragment</span> <span class="keyword">extends</span> <span class="title">Fragment</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Nullable</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> View <span class="title">onCreateView</span><span class="params">(<span class="meta">@NonNull</span> LayoutInflater inflater, <span class="meta">@Nullable</span> ViewGroup container, <span class="meta">@Nullable</span> Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//</span></span><br><span class="line">       View view =inflater.inflate(R.layout.left_fragment,container,<span class="keyword">false</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.onCreateView(inflater, container, savedInstanceState);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="动态加载Fragment"><a href="#动态加载Fragment" class="headerlink" title="动态加载Fragment"></a>动态加载Fragment</h2><p><img src="C:\Users\Administrator\Desktop\Typora\图\动态加载Frament.jpg"></p>
+<h2 id="动态加载Fragment"><a href="#动态加载Fragment" class="headerlink" title="动态加载Fragment"></a>动态加载Fragment</h2><p><img src="/images/Fangment/Frament1.jpg" alt="Frament1"></p>
 <p>1、新建布局文件，</p>
 <p>2、activity_man.xml 设置布局</p>
 <p>3、创建 新Frament 继承fragment，xml文件通过IO操作，转换成View对象</p>
@@ -39,17 +40,79 @@
 
 ]]></content>
       <categories>
-        <category>安卓</category>
+        <category>Android</category>
       </categories>
       <tags>
-        <tag>测试标签</tag>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hive中的分区</title>
+    <url>/2021/12/30/Hive%E4%B8%AD%E7%9A%84%E5%88%86%E5%8C%BA/</url>
+    <content><![CDATA[<p>Hive中的分区</p>
+<h3 id="一、HIVE与HDFS的关系"><a href="#一、HIVE与HDFS的关系" class="headerlink" title="一、HIVE与HDFS的关系"></a>一、HIVE与HDFS的关系</h3><h5 id="1-Hive中创建一个表，这个表会在hdfs中以文件夹的形式显示，这个文件夹内就以文件的形式存放该表的数据。"><a href="#1-Hive中创建一个表，这个表会在hdfs中以文件夹的形式显示，这个文件夹内就以文件的形式存放该表的数据。" class="headerlink" title="1.Hive中创建一个表，这个表会在hdfs中以文件夹的形式显示，这个文件夹内就以文件的形式存放该表的数据。"></a>1.Hive中创建一个表，这个表会在hdfs中以文件夹的形式显示，这个文件夹内就以文件的形式存放该表的数据。</h5><p>​        比如下面创建一个data_log表，则默认在/user/hive/warehouse目录下会有一个对应的data_log文件夹。data_log文件夹内则是以文件的形式存放data_log表的数据。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">--创建一个data_log表：用来记录数据日志的</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> data_log(id <span class="type">int</span>,content string)</span><br><span class="line"><span class="type">row</span> format delimited fields terminated <span class="keyword">by</span> <span class="string">&#x27;,&#x27;</span></span><br><span class="line">stored <span class="keyword">as</span> textfile;</span><br><span class="line"></span><br><span class="line"><span class="comment">--插入数据：可以直接用sql插入。</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> data_log <span class="keyword">values</span>()......</span><br><span class="line"><span class="comment">--也可以使用hdfs的命令直接将文件放入到该data_log文件夹下，例如：</span></span><br><span class="line">hadoop fs <span class="operator">-</span>put <span class="operator">/</span>root<span class="operator">/</span>data_log_20210102.txt <span class="operator">/</span><span class="keyword">user</span><span class="operator">/</span>hive<span class="operator">/</span>warehouse<span class="operator">/</span>data_log<span class="operator">/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--data_log_20210102.txt文件中的内容如下</span></span><br><span class="line"><span class="number">1</span>,<span class="string">&#x27;aaa&#x27;</span></span><br><span class="line"><span class="number">2</span>,<span class="string">&#x27;bbb&#x27;</span></span><br><span class="line"><span class="number">3</span>,<span class="string">&#x27;ccc&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>​                                                                                        <strong>data_log表的图示：</strong></p>
+<img src="/images/图片/data_log表.png" alt="./" style="zoom:60%;">
+
+<p>​                                                                                        <strong>data_log表中的数据图示：</strong></p>
+<img src="/images/图片/data_log表的数据.png" style="zoom:60%;">
+
+<img src="/images/图片/data_log数据.png" style="zoom:100%;">
+
+<p>​        随着系统运行时间的增加，data_log表的数据量会越来越大，而Hive查询数据的数据的时候通常使用的是<strong>全表扫描</strong>，这样将会导致大量不必要的数据进行扫描，从而<strong>查询效率会大大的降低</strong>。因此，Hive引进了分区技术，使用<strong>分区技术，可以避免Hive全表扫描，提升查询效率</strong>。</p>
+<h3 id="二、Hive中的分区"><a href="#二、Hive中的分区" class="headerlink" title="二、Hive中的分区"></a>二、Hive中的分区</h3><h5 id="1-分区基本介绍"><a href="#1-分区基本介绍" class="headerlink" title="1.分区基本介绍"></a><strong>1.分区</strong>基本介绍</h5><p>​        <strong>将整个表的数据在存储时划分成多个子目录来存储</strong>。</p>
+<p>​        <strong>用法</strong>：**partitioned by(分区名 数据类型)**。创建多级分区，分区之间用逗号分隔，比如创建二级分区partitioned by (day string, hour string)。</p>
+<p>​        <strong>注意事项</strong>：Hive中的<strong>分区使用的是表外字段</strong>，不能使用表中已存在的字段列。分区字段可以看成是表的伪列，可用于查询过滤条件，但不会存储实际的值。（MySQL中的分区使用的是表内字段）。</p>
+<p>​        <strong>分区分类：</strong>静态分区、动态分区。静态分区是加载数据的时候指定分区的值。动态分区是数据未知,根据分区的值确定建立分区。</p>
+<h5 id="2-分区表案例-静态分区"><a href="#2-分区表案例-静态分区" class="headerlink" title="2.分区表案例(静态分区)"></a>2.分区表案例(静态分区)</h5><p>​        <strong>2.1 建表sql</strong></p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">--创建一个data_log2表，指定根据log_date日志时间来分区</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> data_log2(id <span class="type">int</span>,content string)</span><br><span class="line">partitioned <span class="keyword">by</span> (log_date string)</span><br><span class="line"><span class="type">row</span> format delimited fields terminated <span class="keyword">by</span> <span class="string">&#x27;,&#x27;</span></span><br><span class="line">stored <span class="keyword">as</span> textfile;</span><br><span class="line"></span><br><span class="line"><span class="comment">--将data_log_20210102.txt数据加载到分区表中，</span></span><br><span class="line">load data <span class="keyword">local</span> inpath <span class="string">&#x27;/root/data_log_20210102.txt&#x27;</span> <span class="keyword">into</span> <span class="keyword">table</span> data_log2 <span class="keyword">partition</span>(log_date<span class="operator">=</span><span class="string">&#x27;20210102&#x27;</span>);</span><br><span class="line"><span class="comment">--将data_log_20210202.txt数据加载到分区表中，</span></span><br><span class="line">load data <span class="keyword">local</span> inpath <span class="string">&#x27;/root/data_log_20210202.txt&#x27;</span> <span class="keyword">into</span> <span class="keyword">table</span> data_log2 <span class="keyword">partition</span>(log_date<span class="operator">=</span><span class="string">&#x27;20210202&#x27;</span>);</span><br><span class="line"><span class="comment">--将data_log_20210302.txt数据加载到分区表中，</span></span><br><span class="line">load data <span class="keyword">local</span> inpath <span class="string">&#x27;/root/data_log_20210302.txt&#x27;</span> <span class="keyword">into</span> <span class="keyword">table</span> data_log2 <span class="keyword">partition</span>(log_date<span class="operator">=</span><span class="string">&#x27;20210302&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">--上面就相当于将data_log2表分成了3个子表，每个子表中存放了对应的数据</span></span><br></pre></td></tr></table></figure>
+
+<p>​        <strong>2.2 data_log2表及其下面的3个子表图</strong></p>
+<p>​            <img src="/images/图片/data_log2分区表.png" style="zoom:60%;"></p>
+<img src="/images/图片/分区表数据.png" alt="分区表数据" style="zoom:80%;">
+
+<p>​        <strong>2.2.1 子表1的数据</strong></p>
+<img src="/images/图片/子表1的数据.png" style="zoom:60%;">
+
+<img src="/images/图片/查询子表1的数据.png" alt="查询子表1的数据" style="zoom:80%;">
+
+<p>​        <strong>2.2.2 子表2的数据</strong></p>
+<img src="/images/图片/子表2的数据.png" alt="子表2的数据" style="zoom:60%;">
+
+<p>​        <strong>2.2.3 子表3的数据</strong></p>
+<p>​            <img src="/images/图片/子表3的数据.png" alt="子表3的数据" style="zoom:60%;"></p>
+<h5 id="3-分区的其他操作"><a href="#3-分区的其他操作" class="headerlink" title="3.分区的其他操作"></a>3.分区的其他操作</h5><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">--查看某表的分区情况</span></span><br><span class="line"><span class="keyword">show</span> partitions 表名;</span><br><span class="line"></span><br><span class="line"><span class="comment">--给某个表增加单个分区</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> <span class="keyword">partition</span>(分区字段名称<span class="operator">=</span>分区值);</span><br><span class="line"><span class="comment">--给某个表增加多个分区：注意多个partition之间用空格隔开</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">add</span> <span class="keyword">partition</span>(分区字段名称<span class="number">1</span><span class="operator">=</span>分区值<span class="number">1</span>) <span class="keyword">partition</span>(分区字段名称<span class="number">2</span><span class="operator">=</span>分区值<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">--删除单个分区</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">drop</span> <span class="keyword">partition</span>(分区字段名<span class="operator">=</span>分区值);</span><br><span class="line"><span class="comment">--删除多个分区：注意多个partition之间用逗号隔开</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 <span class="keyword">drop</span> <span class="keyword">partition</span>(分区字段名<span class="operator">=</span>实际分区名),<span class="keyword">partition</span>(分区字段名<span class="operator">=</span>实际分区名)</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-动态分区"><a href="#4-动态分区" class="headerlink" title="4.动态分区"></a>4.动态分区</h5><ul>
+<li>​        要想创建动态分区，需要修改配置文件hive-site.xml。在配置文件中修改成如下内容：</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--开启动态分区功能（默认 true，开启）--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">name</span>&gt;</span>hive.exec.dynamic.partition<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">value</span>&gt;</span>true<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--设置为非严格模式（动态分区的模式，默认strict，表示必须指定至少一个分区为静态分区，nonstrict模式表示允许所有的分区字段都可以使用动态分区。）--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">name</span>&gt;</span>hive.exec.dynamic.partition.mode<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">value</span>&gt;</span>nonstrict<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>​        案例：</p>
+<p><strong>注意</strong>：动态分区需要使用查表的方式创建。</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">--创建一个临时表存储数据</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> if <span class="keyword">not</span> <span class="keyword">exists</span> user_tmp(</span><br><span class="line">    id <span class="type">int</span>,</span><br><span class="line">    username string,</span><br><span class="line">    country string</span><br><span class="line">)</span><br><span class="line"><span class="type">row</span> format delimited fields terminated <span class="keyword">by</span> <span class="string">&#x27;,&#x27;</span>;</span><br><span class="line"><span class="comment">--给临时表插入数据</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> user_tmp <span class="keyword">values</span>(<span class="number">1</span>,<span class="string">&#x27;tom&#x27;</span>,<span class="string">&#x27;city1&#x27;</span>),(<span class="number">2</span>,<span class="string">&#x27;bob&#x27;</span>,<span class="string">&#x27;city2&#x27;</span>),(<span class="number">3</span>,<span class="string">&#x27;jack&#x27;</span>,<span class="string">&#x27;city1&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">--创建分区表</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> if <span class="keyword">not</span> <span class="keyword">exists</span> user_desc</span><br><span class="line">(</span><br><span class="line">    id <span class="type">int</span>,</span><br><span class="line">    username string</span><br><span class="line">)</span><br><span class="line">partitioned <span class="keyword">by</span>(country string)</span><br><span class="line"><span class="type">row</span> format delimited fields terminated <span class="keyword">by</span> <span class="string">&#x27;,&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">--通过另外一张表中的列来对当前的分区进行赋值：分区字段的值用中文好像会报错。</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> user_desc <span class="keyword">partition</span>(country) <span class="keyword">select</span> id,username,country <span class="keyword">from</span> user_tmp;</span><br></pre></td></tr></table></figure></li>
+<li><p>​       动静分区的区别：</p>
+<p>​                静态分区使用<strong>load</strong>的方式进行加载数据，在加载的同时必须要确定分区值。</p>
+<p>​            动态分区使用的是<code>insert into 表名 partition(分区) + select 字段 from 表名2</code>的方式来进行加载数据。</p>
+<p>​       一般情况下不建议使用动态分区，因为动态分区插入数据的时候会额外的使用 MapReduce 来处理数据，如果分区数量过多会导致MapReduce和YARN的性能达到瓶颈。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>测试分类</category>
+      </categories>
+      <tags>
+        <tag>Hive</tag>
       </tags>
   </entry>
   <entry>
     <title>HuTool</title>
     <url>/2021/12/29/HuTool/</url>
     <content><![CDATA[<p>HuTool</p>
-<p>官方文档：<a href="">https://www.hutool.cn/docs/index.html#/</a></p>
+<p>官方文档：<a href>https://www.hutool.cn/docs/index.html#/</a></p>
 <p>Hutool是一个Java基础工具类，对文件、流、加密解密、转码、正则、线程、XML等JDK方法进行封装，组成各种Util工具类，同时提供以下组件：</p>
 <ul>
 <li>布隆过滤</li>
@@ -164,6 +227,17 @@
 <p><a href="https://www.hutool.cn/docs/index.html#/">https://www.hutool.cn/docs/index.html#/</a></p>
 </blockquote>
 ]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>工具类</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>about</title>
+    <url>/2022/01/04/about/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Hello World</title>
@@ -1274,7 +1348,7 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>测试标签</tag>
+        <tag>系统</tag>
       </tags>
   </entry>
 </search>
